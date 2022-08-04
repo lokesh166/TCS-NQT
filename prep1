@@ -1,0 +1,50 @@
+https://prepinsta.com/tcs-coding-question-1/
+
+
+
+
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n; cin >> n;
+    int dis = 10;
+    int x = 0 , y = 0;
+    char ch = 'R';
+    while(n) {
+        switch(ch){
+            
+            case 'R':
+                x += dis;
+                dis += 10;
+                ch = 'U';
+                break;
+            case 'U':
+                y += dis;
+                dis += 10;
+                ch = 'L';
+                break;
+            case 'L':
+                x -= dis;
+                dis += 10;
+                ch = 'D';
+                break;
+            case 'D':
+                y -= dis;
+                dis += 10;
+                ch = 'A';
+                break;
+            case 'A':
+                x += dis;
+                dis += 10;
+                ch = 'R';
+                break;
+        }
+        
+        n--;
+    }
+    
+    cout << x << " " << y;
+    
+    return 0;
+}
